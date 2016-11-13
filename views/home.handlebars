@@ -1,5 +1,49 @@
+<style>
+	.home_title {
+		width: 100%;
+		text-align: center;
+	}
 
-<div class="nav_bar">
+	.slider {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		padding: 0;
+		transition: all 250ms ease;
+	}
+
+	.slider-container {
+		overflow: hidden;
+		position: relative;
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	.slider_item {
+		list-style: none;
+		height: 500px;
+		min-width: 1000px;
+		background-position: center center;
+		background-size: cover;
+	}
+
+
+</style>
+
+<h1 class="home_title">Inclusion Chats</h1>
+
+
+<div class="slider-container">
+	<ul class="slider js-gallery">
+		<li class="slider_item js-gallery-item" style=" background-image: url('pictures/InclusionLogoFinal.png')"></li>
+		<li class="slider_item js-gallery-item" style=" background-image: url('pictures/inclusion_2.jpg')"></li>
+		<li class="slider_item js-gallery-item" style=" background-image: url('pictures/inclusion_3.jpg')"></li>
+		<li class="slider_item js-gallery-item" style=" background-image: url('pictures/inclusion_4.jpg')"></li>
+
+	</ul>
+</div>
+
+<div id="nav_bar">
 	<ul>
 		<li><a href="/about">About Us</a></li>
 		<li><a href="contact">Contact</a></li>
@@ -7,10 +51,34 @@
 	</ul>
 </div>
 
-<div class="main">
-	<h1>Inclusion Chats</h1>
+<div id="main">
 
 	<h4>Small group discussions co-faciliated by tech professionals and STEM students</h4>
 
 </div>
+
+<script>
+	//getting slider and slider images
+	var gallery = document.querySelector('.js-gallery')
+	var galleryItems = document.querySelectorAll('.js-gallery-item')
+
+	var slideCount = galleryItems.length
+	//getting the witdt of a single slider
+	var slideWidth = galleryItems[0].getBoundingClientRect().width
+
+	var slideInterval = setInterval(transitionSlide, 3000)
+
+	var currentSlide = 1
+
+	function transitionSlide() {
+		if (currentSlide < slideCount) {
+			gallery.style.transform = "translateX(-" + slideWidth * currentSlide + "px)"
+			currentSlide++
+		} else {
+			gallery.style.transform = "translateX(0)"
+			 currentSlide = 1
+		}
+	}
+
+</script>
 
