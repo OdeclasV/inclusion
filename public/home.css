@@ -1,0 +1,49 @@
+
+	.home_title {
+		width: 100%;
+		text-align: center;
+	}
+
+	.nav_bar {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.nav_bar_item {
+		float: right;
+	}
+
+	li a {
+		display: block;
+		padding: 8px;
+
+	}
+
+	.slider {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		padding: 0;
+		transition: all 250ms ease;
+	}
+
+	.slider-container {
+		overflow: hidden;
+		position: relative;
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	.slider_item {
+		list-style: none;
+		height: 500px;
+		min-width: 1000px;
+		background-position: center center;
+		background-size: cover;
+	}
+
+	.home_sentence {
+		text-align: center;
+	}

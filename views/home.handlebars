@@ -1,66 +1,25 @@
-<style>
-	.header {
-		background-color: rgb(0,0,0);
-		color: rgb(255,255,255);
-	}
 
-	.home_title {
-		width: 100%;
-		text-align: center;
-	}
-
-	.nav_bar {
-		text-align: right;
-		list-style: none;
-	}
-
-	.nav_bar_item {
-		list-style: none;
-		text-align: center
-
-	}
-
-	.slider {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		padding: 0;
-		transition: all 250ms ease;
-	}
-
-	.slider-container {
-		overflow: hidden;
-		position: relative;
-		width: 1000px;
-		margin: 0 auto;
-	}
-
-	.slider_item {
-		list-style: none;
-		height: 500px;
-		min-width: 1000px;
-		background-position: center center;
-		background-size: cover;
-	}
-
-
-
-
-</style>
+<link rel="stylesheet" href="/home.css">
 
 <div class="header">
 	<h1 class="home_title">Inclusion Chats</h1>
 
-		<ul class="nav_bar">
-			<li><a href="/about" class="nav_bar_item">About Us</a></li>
-			<li><a href="contact" class="nav_bar_item">Contact</a></li>
-			<li><a href="https://twitter.com/inclusionchats" target="blank" class="nav_bar_item">Twitter</a></li>
-		</ul>
+	<h5 class="home_sentence">Small group discussions co-faciliated by tech professionals and STEM students</h5>
+
+	<ul class="nav_bar">
+
+		<li><a href="/about" class="nav_bar_item">About Us</a></li>
+		<li><a href="contact" class="nav_bar_item">Contact</a></li>
+		<li><a href="https://twitter.com/inclusionchats" target="blank" class="nav_bar_item">Twitter</a></li>
+
+	</ul>
+
 </div>
 
 
 <div class="slider-container">
 	<ul class="slider js-gallery">
+
 		<li class="slider_item js-gallery-item" style=" background-image: url('pictures/InclusionLogoFinal.png')"></li>
 		<li class="slider_item js-gallery-item" style=" background-image: url('pictures/inclusion_2.jpg')"></li>
 		<li class="slider_item js-gallery-item" style=" background-image: url('pictures/inclusion_3.jpg')"></li>
@@ -69,34 +28,11 @@
 	</ul>
 </div>
 
-<div id="home_sentence">
+{{!-- <div class="home_sentence">
 
 	<h4>Small group discussions co-faciliated by tech professionals and STEM students</h4>
 
-</div>
+</div> --}}
 
-<script>
-	//getting slider and slider images
-	var gallery = document.querySelector('.js-gallery')
-	var galleryItems = document.querySelectorAll('.js-gallery-item')
-
-	var slideCount = galleryItems.length
-	//getting the witdt of a single slider
-	var slideWidth = galleryItems[0].getBoundingClientRect().width
-
-	var slideInterval = setInterval(transitionSlide, 3000)
-
-	var currentSlide = 1
-
-	function transitionSlide() {
-		if (currentSlide < slideCount) {
-			gallery.style.transform = "translateX(-" + slideWidth * currentSlide + "px)"
-			currentSlide++
-		} else {
-			gallery.style.transform = "translateX(0)"
-			 currentSlide = 1
-		}
-	}
-
-</script>
+<script src="slider.js"> </script>
 
