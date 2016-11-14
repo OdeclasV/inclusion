@@ -16,6 +16,10 @@ app.set('views', __dirname + "/views")
 //Adding CSS file (main.css)
 app.use(express.static(__dirname + '/public'))
 
+//Using Body Parser
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended:true }))
+
 //Routes
 app.get('/', function( req, res ){
 	res.render('home')
@@ -33,6 +37,8 @@ app.get('*', function( req, res ){
 	res.send('Page not found/404')
 })
 
-app.listen(3000)
-console.log('listenting on 3000')
+app.listen( process.env.PORT || 3000, function() {
 
+  console.log( 'listening on 3000' )
+
+}) 
