@@ -3,7 +3,7 @@
 	var galleryItems = document.querySelectorAll('.js-gallery-item')
 
 	var slideCount = galleryItems.length
-	//getting the witdt of a single slider
+	//getting the width of a single slider
 	var slideWidth = galleryItems[0].getBoundingClientRect().width
 
 	var slideInterval = setInterval(transitionSlide, 3000)
